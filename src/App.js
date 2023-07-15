@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Analytics from "./dashboard/analytics";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Sidebar from "./global/sidebar";
+import Topbar from "./global/topbar";
+import { ThemeProvider } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
+import { useMode } from "./global/theme";
+import { CssBaseline } from "@mui/material";
 
 function App() {
+  const [theme, colorMode] = useMode();
+  const sidebarTheme = createTheme(theme);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={createTheme(theme)}>
+      <CssBaseline />
+      <div className="App">
+        <Router>
+          <div className="container">
+            <div className="sidebar">
+              <ThemeProvider theme={sidebarTheme}>
+                <Sidebar />
+              </ThemeProvider>
+            </div>
+            <div className="content">
+              <div className="top-bar">
+                <Topbar toggleDarkMode={colorMode.toggleColorMode} />
+              </div>
+              <div className="dashboard">
+                <Routes>
+                  <Route path="/" element={<Analytics />} />
+                </Routes>
+              </div>
+            </div>
+          </div>
+        </Router>
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,0 +1,78 @@
+/* Add the following CSS rules to your analytics.css file */
+
+/* Styles for the container */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    /* align-items: center; */
+  }
+  
+ /* Styles for the first row */
+.row-1 {
+    display: flex;  /* Displays the items in a flex container */
+    justify-content: space-between;  /* Distributes the items evenly with space in between */
+    align-items: flex-start;  /* Aligns the items at the top of the container */
+    margin-bottom: 20px;  /* Adds a bottom margin of 20 pixels to the row */
+  }
+  
+  .row-1 > div {
+    flex: 1 1 auto;  /* Allows the items to grow and shrink with equal proportions */
+    /* Optionally, you can add margin properties here to create the margin line for each grid */
+    /* Example: margin-left: 1px; margin-right: 1px; */
+  }
+  
+  /* Styles for the second row */
+  .row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .row-2 > div {
+    flex-basis: 50%;
+  }
+  
+  /* Styles for the third row */
+  .row-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .row-3 > div {
+    flex-basis: 50%;
+  }
+  
+  /* Styles for the fourth row */
+  .row-4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .row-4 > div {
+    flex-basis: 50%;
+  }
+  /* Add margin to all grid items */
+.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8 {
+    margin: 10px;
+    border: 1px solid black;
+  }
+
+  /* .fil-ter{
+    width: 200px;
+  } */
+  .header1{
+    color: rgb(8, 166, 24);
+   
+    
+  }
+  .down-load{
+    background-color: rgb(218, 207, 207);
+    width:max-content;
+  }
+
+  
